@@ -6,9 +6,10 @@
 - __docker ps__ -> lista de containers ativos
 - __docker ps -a__ -> lista de containers ativos e inativos
 - __docker run ubuntu echo "Ola Mundo"__ -> exemplo de execução dentro do ubunto
-- __docker run -it ubuntu__ -> Executar dentro do terminal do container ubuntu criado
+- __docker run -it ubuntu bash__ -> Executar dentro do terminal do container ubuntu criado
 - __docker start + (id container)__ -> Serve para iniciar o container pelo ID
 - __docker stop + (id container)__ -> Serve para parar o container pelo ID
+- __docker stop + $(docker container ls -q)__ -> Serve para parar todos os containers pelo ID
 - __docker start -a -i + (id container)__ -> Serve para iniciar o contaner e entrar no terminal do sistema interno (Ubuntu)
 - __docker rm + (id container)__ -> Exclui o container de acordoc om o ID passado
 - __docker container prune__ -> Exclui todos os containers inativos
@@ -23,6 +24,11 @@
 - __docker inspect + (id container)__ -> Inspecionando um container pelo seu ID
 - __docker run -it -v "C:\Users\Alura\Desktop:/var/www" ubuntu__ -> Cria um volume apontando para uma pasta de um diretório específico na máquina
 - __docker run -p 8080:3000 -v "C:\Users\Alura\Desktop\volume-exemplo:/var/www" -w "/var/www" node npm start__ -> Cria um volume apontando para uma pasta de um diretório específico na máquina, para uma porta específica e dando start em um server node
+
+## Comandos para imagens
+- __docker images__ -> Inspecionando as imagens existentes
+- __docker history + (id container)__ -> Inspecionando as camadas de uma imagem pelo seu ID
+## Fim
 
 ## Início dos comandos para gerar uma imagem
 - __Dockerfile ou .Dockerfile__ -> Escrever tudo abaixo dentro de um arquivo desse tipo
@@ -42,6 +48,7 @@
 ## Publicando no servidor do docker a imagem
 - __docker login__ -> Criar uma conta no docker, após isso, utilizar esse comando para logar na mesma
 - __docker push douglasq/node__ -> Subir a sua imagem para que outros possam utilizar
+- __docker tag (nome da imagem na máquina) (nome da imagem que será criado no docker hub))__ -> Informa para qual versão vai usar e qual será a imagem utilizada que está na máquina
 ## FIm
 
 ## Criando uma rede para os containers se conectarem entre si
@@ -51,6 +58,7 @@
 
 
 
-## Comandos básicos link
+## Comandos básicos - links
 
 - https://imasters.com.br/desenvolvimento/comandos-basicos-docker
+- https://docs.docker.com/engine/reference/builder/
